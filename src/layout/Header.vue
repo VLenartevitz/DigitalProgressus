@@ -2,7 +2,7 @@
     <header class="header">
       <nav>
         <ul class="menu">
-          <li class="menu-item">
+          <li class="menu-item"> 
             <a href="#home" class="home">Home</a>
           </li>
           <li class="menu-item">
