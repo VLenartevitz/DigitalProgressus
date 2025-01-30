@@ -129,7 +129,6 @@ export default {
   font-size: 80px;
   font-family: "Holtwood One SC";
   font-weight: 400;
-  line-height: 80px;
   padding-left: 100px;
 }
 

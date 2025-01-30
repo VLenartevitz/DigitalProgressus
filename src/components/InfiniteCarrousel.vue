@@ -1,83 +1,68 @@
 <template>
-    <div class="carousel-container" ref="carouselContainer">
-      <div class="carousel-scroll" ref="carouselScroll" id="headline-scroll">
-        <div v-for="(font, index) in fonts" :key="index" class="carousel-item">
-          <p class="carousel-text" :style="{ fontFamily: font }">Sobre Nós</p>
-        </div>
+  <div class="carousel-container" ref="carouselContainer">
+    <div class="carousel-scroll" ref="carouselScroll">
+      <div v-for="(font, index) in fonts" :key="index" class="carousel-item">
+        <p class="carousel-text" :style="{ fontFamily: font }">Sobre Nós</p>
+      </div>
+      <div v-for="(font, index) in fonts" :key="`clone-${index}`" class="carousel-item">
+        <p class="carousel-text" :style="{ fontFamily: font }">Sobre Nós</p>
       </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'InfiniteCarousel',
-    data() {
-      return {
-        fonts: [
-          'Arial, sans-serif',
-          'Courier New, Courier, monospace',
-          'Georgia, serif',
-          'Times New Roman, Times, serif',
-          'Verdana, Geneva, sans-serif',
-          'Tahoma, Geneva, sans-serif',
-          'Roboto, sans-serif',
-          'Lobster, cursive',
-        ]
-      };
-    },
-    mounted() {
-      this.cloneScrollContent();
-    },
-    methods: {
-      cloneScrollContent() {
-        // Clona o conteúdo para criar o efeito de rolagem contínua
-        const headlineScroll = this.$refs.carouselScroll;
-        const clone = headlineScroll.cloneNode(true);
-        headlineScroll.parentNode.appendChild(clone);
-  
-        // Calcula a largura do conteúdo e aplica aos elementos
-        const scrollWidth = headlineScroll.scrollWidth;
-        headlineScroll.style.width = `${scrollWidth}px`;
-        clone.style.width = `${scrollWidth}px`;
-      },
-    },
-  };
-  </script>
-  
-  <style scoped>
-  .carousel-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'InfiniteCarousel',
+  data() {
+    return {
+      fonts: [
+        'Arial, sans-serif',
+        'Times New Roman, Times, serif',
+        'Courier New, Courier, monospace',
+        'Georgia, serif',
+        'Roboto, sans-serif',
+        'Tahoma, Geneva, sans-serif',
+        'Lobster, cursive',
+      ],
+    };
+  },
+};
+</script>
+
+<style scoped>
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  animation: scroll 20s linear infinite;
+}
+
+.carousel-item {
+  flex: none;
+  padding: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+.carousel-text {
+  font-size: 50px;
+  font-weight: bold;
+  color: #ffffff;
+  transition: font-size 0.5s ease;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-  
-  .carousel-scroll {
-    display: flex;
-    flex-wrap: nowrap;
-    animation: scroll 15s linear infinite;
+  100% {
+    transform: translateX(-50%); /* Move apenas metade do conteúdo */
   }
-  
-  .carousel-item {
-    flex: none;
-    padding: 10px;
-    display: inline-block;
-    text-align: center;
-  }
-  
-  .carousel-text {
-    font-size: 30px;
-    font-weight: bold;
-    color: #333;
-    transition: font-size 0.5s ease;
-  }
-  
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  </style>
-  
+}
+</style>

@@ -1,6 +1,7 @@
 <template>
   <Header> </Header>
   <InfiniteCarrousel> </InfiniteCarrousel>
+  <About></About>
   <Services> </Services> 
   <Footer>  </Footer>
 </template>
@@ -10,13 +11,14 @@ import Header from './layout/Header.vue'
 import Footer from './layout/Footer.vue';
 import InfiniteCarrousel from './components/InfiniteCarrousel.vue';
 import Services from './layout/Services.vue';
+import About from './layout/About.vue';
 
 
 export default {
   name: 'App',
   components: {
     // eslint-disable-next-line vue/no-unused-components
-    Header, Footer, InfiniteCarrousel, Services
+    Header, Footer, InfiniteCarrousel, Services, About
   }
 }
 </script>
