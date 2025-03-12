@@ -64,7 +64,7 @@
     align-items: center;
     border: 2px solid rgba(250, 239, 209, 1);
     border-radius: 30px;
-    background-color: rgba(217, 217, 217, 0);
+    /* background-color: rgba(255, 0, 0, 0); */
     height: 100%;
     padding: 12px;
     box-sizing: border-box;
@@ -73,7 +73,7 @@
   /* Links dentro dos itens do menu */
   .menu-item a {
     text-decoration: none;
-    color: rgba(0, 0, 0, 1);
+    color: rgba(250, 239, 209, 1);
     font-size: 40px;
     line-height: 100%;
     font-family: "Holtwood One SC", serif;
@@ -83,7 +83,7 @@
   
   /* Ajustes individuais para cada item (se necessário) */
   .menu-item a:hover {
-    color: rgba(250, 239, 209, 1); /* Cor ao passar o mouse */
+    color:#ff9400; /* Cor ao passar o mouse */
     transition: color 0.3s ease;
   }
   </style>

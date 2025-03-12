@@ -1,23 +1,23 @@
 <template>
     <div class="container">
-        <p class="description">
+        <p class="descriptionAbout">
             Somos uma <br/>Equipe formada<br/>por 4 irmãos ...
         </p>
         <div class="team">
             <div class="member">
-                <img class="image" src="https://via.placeholder.com/205x365" />
+                <img class="image" src="../assets/images/clube.png" />
                 <p class="name">Daniel</p>
             </div>
             <div class="member">
-                <img class="image" src="https://via.placeholder.com/205x364" />
+                <img class="image" src="../assets/images/clube.png" />
                 <p class="name">Samuel</p>
             </div>
             <div class="member">
-                <img class="image" src="https://via.placeholder.com/205x364" />
+                <img class="image" src="../assets/images/clube.png" />
                 <p class="name">Filipe</p>
             </div>
             <div class="member">
-                <img class="image" src="https://via.placeholder.com/205x364" />
+                <img class="image" src="../assets/images/clube.png" />
                 <p class="name">Gabriel</p>
             </div>
         </div>
@@ -48,7 +48,7 @@ export default {
     padding-left: 20px;  /* Adiciona um pequeno padding à esquerda */
 }
 
-.description {
+.descriptionAbout {
     text-align: left;  /* Alinha o texto à esquerda */
     font-size: 80px;
     font-family: Montserrat;

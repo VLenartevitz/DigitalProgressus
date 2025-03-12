@@ -3,6 +3,8 @@
   <InfiniteCarrousel> </InfiniteCarrousel>
   <About></About>
   <Services> </Services> 
+  <Clients></Clients>
+  <Contact></Contact>
   <Footer>  </Footer>
 </template>
 
@@ -12,13 +14,15 @@ import Footer from './layout/Footer.vue';
 import InfiniteCarrousel from './components/InfiniteCarrousel.vue';
 import Services from './layout/Services.vue';
 import About from './layout/About.vue';
+import Clients from './layout/Clients.vue';
+import Contact from './layout/Contact.vue';
 
 
 export default {
   name: 'App',
   components: {
     // eslint-disable-next-line vue/no-unused-components
-    Header, Footer, InfiniteCarrousel, Services, About
+    Header, Footer, InfiniteCarrousel, Services, About, Clients, Contact
   }
 }
 </script>
