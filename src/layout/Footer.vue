@@ -3,36 +3,42 @@
     <div class="footer-content">
 
       <div class="secondContent">
+        <!-- Logo -->
         <div class="logo-container">
-          <img :src="require('@/assets/images/Logo.png')" alt="Imagem local" class="logo" />
-        </div>
-        <div class="navigation">
-          <p>Início</p>
-          <p>Sobre Nós</p>
-          <p>Serviços</p>
-          <p>Contato</p>
+          <img :src="require('@/assets/images/Logo.png')" alt="Logo da empresa" class="logo" />
         </div>
 
+        <!-- Navegação -->
+        <div class="navigation">
+          <p @click="navigate('inicio')">Início</p>
+          <p @click="navigate('sobre')">Sobre Nós</p>
+          <p @click="navigate('servicos')">Serviços</p>
+          <p @click="navigate('contato')">Contato</p>
+        </div>
+
+        <!-- Redes sociais -->
         <div class="social-media">
-          <div class="icon-group">
-            <div class="icon"></div>
+          <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="icon-group">
+            <i class="fab fa-instagram icon"></i>
             <p>Instagram</p>
-          </div>
-          <div class="icon-group">
-            <div class="icon"></div>
-            <p>Whats</p>
-          </div>
-          <div class="icon-group">
-            <div class="icon"></div>
+          </a>
+          <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp" class="icon-group">
+            <i class="fab fa-whatsapp icon"></i>
+            <p>WhatsApp</p>
+          </a>
+          <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn" class="icon-group">
+            <i class="fab fa-linkedin icon"></i>
             <p>LinkedIn</p>
-          </div>
+          </a>
         </div>
       </div>
 
+      <!-- Créditos -->
       <div class="credits">
         <p>© 2024 Todos os direitos reservados.</p>
         <p>Desenvolvido por @VLenartevitz</p>
       </div>
+
     </div>
   </div>
 </template>
@@ -41,31 +47,54 @@
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Footer",
+  methods: {
+    navigate(section) {
+      // Exemplo de navegação: pode integrar com Vue Router
+      console.log(`Ir para ${section}`);
+    }
+  }
 };
 </script>
 
 <style scoped>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
 .footer {
   width: 100%;
-  background-color: #ff9400;
+  background-color: #e67e22;
+  /* Laranja queimado */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
+  padding: 60px 0;
+  /* Aumentei o padding */
+  color: #000;
+  /* Texto preto */
 }
 
 .footer-content {
   width: 100%;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  gap: 30px;
+  gap: 20px;
+  /* Aumentei o espaçamento */
+}
+
+.secondContent {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 100px;
+  /* Mais espaço entre as seções */
 }
 
 .logo-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
@@ -74,61 +103,90 @@ export default {
   height: auto;
 }
 
-.secondContent {
-  display: flex;
-  justify-content: center; /* Centraliza o conteúdo */
-  align-items: center;     /* Alinha os itens verticalmente */
-  width: 100%;
-  gap: 40px;
-}
-
+/* Navegação */
 .navigation {
-  flex: 1;
   display: flex;
-  justify-content: center; /* Centraliza os itens dentro da navegação */
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
+  /* Maior espaçamento */
   font-family: Archivo, sans-serif;
   font-weight: 700;
   font-size: 18px;
-  color: black;
+  color: #000;
+  /* Letras pretas */
 }
 
+.navigation p {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navigation p:hover {
+  color: #333;
+  /* Cinza escuro para hover */
+  transform: translateY(-2px);
+}
+
+/* Redes sociais */
 .social-media {
-  flex: 1;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
   flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  gap: 25px;
+  /* Mais espaço entre os itens */
 }
 
 .icon-group {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  gap: 10px;
+  color: #000;
+  /* Letras pretas */
   font-family: Archivo, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.icon-group:hover {
+  transform: translateY(-2px);
 }
 
 .icon {
-  width: 26px;
-  height: 26px;
-  background-color: black;
-  border-radius: 50%;
-  margin-right: 7px;
+  font-size: 26px;
+  color: #000;
+  /* Ícones pretos */
 }
 
+/* Créditos */
 .credits {
   width: 100%;
   text-align: center;
   font-family: Archivo, sans-serif;
   font-size: 14px;
-  font-weight: 700;
-  margin-top: 20px;
-  color: black;
+  font-weight: 400;
+  padding-top: 30px;
+  /* Mais espaço antes do crédito */
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  /* Linha de separação mais visível */
+  color: #000;
+  /* Texto preto */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .secondContent {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    /* Mantendo espaçamento bom no mobile */
+  }
+
+  .navigation,
+  .social-media {
+    align-items: center;
+  }
 }
 </style>
