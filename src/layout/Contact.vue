@@ -3,19 +3,11 @@
     <div class="left-side">
 
       <div class="posi-title">
-      <h1 class="contact-title">CONTACT ME</h1>
-      <p class="subtitle">LET'S <span>Talk About Ideas</span></p>
+      <h1 class="contact-title">Contate-nos</h1>
+      <p class="subtitle">Alguma pergunta?<span>Nós mande um e-mail</span></p>
     </div>
 
       <div class="contact-info">
-        <div class="info-item">
-          <div class="icon-box">🏠</div>
-          <div>
-            <p class="info-title">Address</p>
-            <p class="info-detail">North Tower, Toronto, Canada</p>
-          </div>
-        </div>
-
         <div class="info-item">
           <div class="icon-box">💼</div>
           <div>
@@ -44,15 +36,11 @@
 
     <div class="right-side">
       <form class="contact-form">
-        <input type="text" placeholder="YOUR FULL NAME *" />
-        <input type="email" placeholder="YOUR EMAIL ADDRESS *" />
-        <input type="text" placeholder="YOUR SUBJECT *" />
-        <textarea placeholder="YOUR MESSAGE *"></textarea>
-        <div class="terms">
-          <input type="checkbox" id="terms" />
-          <label for="terms">Accept the terms and conditions.</label>
-        </div>
-        <button type="submit">SEND MESSAGE</button>
+        <input type="text" placeholder="Seu nome" />
+        <input type="email" placeholder="Seu E-mail" />
+        <input type="text" placeholder="Seu titulo" />
+        <textarea placeholder="Sua mensagem *"></textarea>
+        <button type="submit">Envie uma Mensagem</button>
       </form>
     </div>
   </div>
