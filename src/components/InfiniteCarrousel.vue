@@ -53,8 +53,9 @@ export default {
 .carousel-text {
   font-size: 50px;
   font-weight: bold;
-  color: #ffffff;
+  color: rgba(250, 239, 209, 1);
   transition: font-size 0.5s ease;
+
 }
 
 @keyframes scroll {

@@ -1,44 +1,32 @@
 <template>
   <div class="contact-container">
     <div class="left-side">
-
       <div class="posi-title">
-      <h1 class="contact-title">Contate-nos</h1>
-      <p class="subtitle">Alguma pergunta?<span>Nós mande um e-mail</span></p>
-    </div>
-
+        <h1 class="contact-title">Contate-nos</h1>
+        <p class="subtitle">Alguma pergunta?<span>Nós mande um e-mail</span></p>
+      </div>
       <div class="contact-info">
-        <div class="info-item">
-          <div class="icon-box">💼</div>
-          <div>
-            <p class="info-title">Freelance</p>
-            <p class="info-detail">Available Right Now</p>
-          </div>
-        </div>
-
         <div class="info-item">
           <div class="icon-box">✉️</div>
           <div>
             <p class="info-title">Email</p>
-            <p class="info-detail">joe.miller@mydomain.com</p>
+            <p class="info-detail">contatodigitalprogressus@gmail.com</p>
           </div>
         </div>
-
         <div class="info-item">
           <div class="icon-box">📞</div>
           <div>
-            <p class="info-title">Phone</p>
-            <p class="info-detail">+1 900 900 9000</p>
+            <p class="info-title">Telefone</p>
+            <p class="info-detail">+55 13 99686-4685</p>
           </div>
         </div>
       </div>
     </div>
-
     <div class="right-side">
       <form class="contact-form">
         <input type="text" placeholder="Seu nome" />
         <input type="email" placeholder="Seu E-mail" />
-        <input type="text" placeholder="Seu titulo" />
+        <input type="text" placeholder="Seu título" />
         <textarea placeholder="Sua mensagem *"></textarea>
         <button type="submit">Envie uma Mensagem</button>
       </form>
@@ -57,17 +45,15 @@ export default {
 .contact-container {
   display: flex;
   width: 100%;
-  min-height: 80vh; /* Mantendo a responsividade */
-  color: #fff;
+  min-height: 80vh;
+  color: rgba(250, 239, 209, 1);
   padding: 20px 100px;
   align-items: center;
-
 }
 
-.posi-title{
+.posi-title {
   display: flex;
   flex-direction: column;
-
 }
 
 .left-side {
@@ -89,16 +75,17 @@ export default {
   font-size: 40px;
   letter-spacing: 2px;
   font-weight: bold;
+  color: #ff9400;
 }
 
 .subtitle {
   font-size: 20px;
   margin-top: 10px;
-  color: #aaa;
+  color: rgba(250, 239, 209, 1);
 }
 
 .subtitle span {
-  color: #19e8ff;
+  color: #ff9400;
 }
 
 .contact-info {
@@ -114,25 +101,25 @@ export default {
 .icon-box {
   width: 40px;
   height: 40px;
-  background-color: #2c2f34;
+  background-color: #ff9400;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   margin-right: 15px;
   font-size: 20px;
+  color: rgba(250, 239, 209, 1);
 }
 
 .info-title {
   font-size: 16px;
-  color: #aaa;
+  color: #ff9400;
   margin-bottom: 5px;
 }
 
 .info-detail {
   font-size: 18px;
-  color: #fff;
-}
+  color: rgba(250, 239, 209, 1);}
 
 .contact-form {
   width: 100%;
@@ -144,11 +131,11 @@ export default {
 .contact-form input,
 .contact-form textarea {
   background-color: transparent;
-  border: 1px solid #555;
+  border: 1px solid #ff9400;
   padding: 15px 20px;
   margin-bottom: 20px;
   border-radius: 25px;
-  color: #fff;
+  color: rgba(250, 239, 209, 1);
   font-size: 16px;
   outline: none;
 }
@@ -158,22 +145,10 @@ export default {
   resize: none;
 }
 
-.terms {
-  display: flex;
-  align-items: center;
-  color: #aaa;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.terms input {
-  margin-right: 10px;
-}
-
 .contact-form button {
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
+  background: #ff9400;
+  border: none;
+  color: rgba(250, 239, 209, 1);
   padding: 15px;
   border-radius: 25px;
   font-size: 16px;
@@ -182,7 +157,7 @@ export default {
 }
 
 .contact-form button:hover {
-  background-color: #fff;
-  color: #1c1e22;
+  background-color: rgba(250, 239, 209, 1);
+  color: #ff9400;
 }
 </style>

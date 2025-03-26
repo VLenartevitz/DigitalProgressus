@@ -30,10 +30,69 @@
 </template>
 
 <script>
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
-    // eslint-disable-next-line vue/multi-word-component-names
-    name: "About",
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: "About",
+  mounted() {
+    this.animateOnScroll();
+  },
+  methods: {
+    animateOnScroll() {
+      // Animação para a descrição da equipe
+      gsap.from('.descriptionAbout', {
+        opacity: 0,
+        y: -100,
+        duration: 1.5,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: '.descriptionAbout',
+          start: 'top 80%',
+          end: 'bottom 20%',
+          scrub: true,
+        }
+      });
+
+      // Animação para os membros da equipe
+      const members = document.querySelectorAll('.member');
+
+      members.forEach((member, index) => {
+        gsap.from(member, {
+          opacity: 0,
+          y: 100,
+          duration: 1.5,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: member,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            scrub: true,
+            delay: index * 0.2, // Delay entre animações dos membros
+          }
+        });
+      });
+
+      // Animação para o texto do rodapé
+      gsap.from('.footer-text', {
+        opacity: 0,
+        y: 100,
+        duration: 1.5,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: '.footer-text',
+          start: 'top 80%',
+          end: 'bottom 20%',
+          scrub: true,
+        }
+      });
+    }
+  }
 }
+
 </script>
 
 <style>
@@ -54,7 +113,7 @@ export default {
     font-family: Montserrat;
     font-style: italic;
     font-weight: 900;
-    color: #fff;
+    color:rgba(250, 239, 209, 1);
     padding-left: 80px;
 }
 
@@ -78,7 +137,7 @@ export default {
 .name {
     font-size: 30px;
     font-family: Holtwood One SC;
-    color: #fff;
+    color: rgba(250, 239, 209, 1);
 }
 
 .footer-text {
@@ -87,6 +146,7 @@ export default {
     font-family: Montserrat;
     font-weight: 400;
     padding: 40px;
+    color: rgba(250, 239, 209, 1);
 }
 
 .tamanhoTexto{

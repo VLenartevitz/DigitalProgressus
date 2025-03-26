@@ -30,10 +30,80 @@
 </template>
 
 <script>
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+
 export default {
     // eslint-disable-next-line vue/multi-word-component-names
-    name: 'Clients'
+    name: 'Clients',
+    mounted() {
+        this.animateOnScroll();
+    },
+    methods: {
+        animateOnScroll() {
+            // Animação do texto introdutório quando entrar no viewport
+            gsap.from('.intro-text', {
+                opacity: 0,
+                y: 50,
+                duration: 1.5,
+                ease: 'power4.out',
+                scrollTrigger: {
+                    trigger: '.intro-wrapper',
+                    start: 'top 80%', // Começa quando 80% do elemento estiver visível
+                    end: 'bottom 20%',
+                    scrub: true, // Para que a animação siga o scroll
+                }
+            });
+
+            // Animação da imagem principal
+            gsap.from('.main-image', {
+                opacity: 0,
+                scale: 0.8,
+                duration: 1.5,
+                ease: 'power4.out',
+                scrollTrigger: {
+                    trigger: '.client-section',
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    scrub: true,
+                }
+            });
+
+            // Animação da seção de clientes
+            gsap.from('.client-section', {
+                opacity: 0,
+                x: -100,
+                duration: 1.5,
+                ease: 'power4.out',
+                scrollTrigger: {
+                    trigger: '.client-section',
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    scrub: true,
+                }
+            });
+
+            // Animação das imagens na galeria
+            gsap.from('.image-small, .image-medium', {
+                opacity: 0,
+                y: 50,
+                stagger: 0.2,
+                duration: 1,
+                ease: 'power4.out',
+                scrollTrigger: {
+                    trigger: '.image-gallery',
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    scrub: true,
+                }
+            });
+        }
+    }
 }
+
 </script>
 
 <style scoped>

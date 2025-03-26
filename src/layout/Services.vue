@@ -7,7 +7,10 @@
         <!-- <div class="divider"></div> -->
         <div class="contentText">
           <div class="description">
-            Desenvolvemos sites responsivos, rápidos e com design intuitivo que oferecem uma excelente experiência ao usuário. Desde a criação do layout até a programação personalizada, garantimos que seu site seja não apenas visualmente atraente, mas também funcional e otimizado para SEO. Com nossa expertise, seu negócio estará online com uma plataforma que reflete sua identidade e potencializa sua presença digital.
+            Desenvolvemos sites responsivos, rápidos e com design intuitivo que oferecem uma excelente experiência ao
+            usuário. Desde a criação do layout até a programação personalizada, garantimos que seu site seja não apenas
+            visualmente atraente, mas também funcional e otimizado para SEO. Com nossa expertise, seu negócio estará
+            online com uma plataforma que reflete sua identidade e potencializa sua presença digital.
           </div>
           <div class="sub-title">Criação de Sites</div>
         </div>
@@ -19,7 +22,10 @@
         <!-- <div class="divider"></div> -->
         <div class="contentText">
           <div class="description">
-            A produção de vídeos é uma das formas mais eficazes de conectar-se com seu público. Oferecemos serviços completos de edição e produção de vídeos, desde roteirização até a pós-produção, criando conteúdos que transmitem sua mensagem de forma clara e envolvente. Seja para vídeos institucionais, campanhas publicitárias ou conteúdos para redes sociais, nossa equipe transforma sua visão em realidade.
+            A produção de vídeos é uma das formas mais eficazes de conectar-se com seu público. Oferecemos serviços
+            completos de edição e produção de vídeos, desde roteirização até a pós-produção, criando conteúdos que
+            transmitem sua mensagem de forma clara e envolvente. Seja para vídeos institucionais, campanhas
+            publicitárias ou conteúdos para redes sociais, nossa equipe transforma sua visão em realidade.
           </div>
           <div class="sub-title">Edição e Produção de Vídeo</div>
         </div>
@@ -31,7 +37,10 @@
         <!-- <div class="divider"></div> -->
         <div class="contentText">
           <div class="description">
-            A identidade visual é um dos pilares para o sucesso de qualquer marca. Nossa equipe de design cria materiais gráficos que traduzem a essência da sua marca de maneira única e impactante. Desenvolvemos logotipos, material promocional, banners, infográficos e muito mais, com foco em estética e funcionalidade, garantindo que sua comunicação visual se destaque e seja reconhecid
+            A identidade visual é um dos pilares para o sucesso de qualquer marca. Nossa equipe de design cria materiais
+            gráficos que traduzem a essência da sua marca de maneira única e impactante. Desenvolvemos logotipos,
+            material promocional, banners, infográficos e muito mais, com foco em estética e funcionalidade, garantindo
+            que sua comunicação visual se destaque e seja reconhecid
           </div>
           <div class="sub-title">DESIGN</div>
         </div>
@@ -43,7 +52,10 @@
         <!-- <div class="divider"></div> -->
         <div class="contentText">
           <div class="description">
-            Aumente a conversão e maximize o retorno sobre o investimento (ROI) com nossa gestão estratégica de anúncios online. Criamos campanhas de publicidade paga no Google Ads, Facebook, Instagram e outras plataformas, otimizando cada anúncio para alcançar o público certo. Monitoramos os resultados em tempo real e ajustamos as campanhas conforme necessário para garantir o melhor desempenho.
+            Aumente a conversão e maximize o retorno sobre o investimento (ROI) com nossa gestão estratégica de anúncios
+            online. Criamos campanhas de publicidade paga no Google Ads, Facebook, Instagram e outras plataformas,
+            otimizando cada anúncio para alcançar o público certo. Monitoramos os resultados em tempo real e ajustamos
+            as campanhas conforme necessário para garantir o melhor desempenho.
           </div>
           <div class="sub-title">Gestão de Anúncios Online</div>
         </div>
@@ -55,7 +67,10 @@
         <!-- <div class="divider"></div> -->
         <div class="contentText">
           <div class="description">
-            Transforme sua presença digital com estratégias de Social Mídia personalizadas. Nossa equipe cria conteúdos impactantes e desenvolve planos de engajamento para aumentar a visibilidade da sua marca nas redes sociais. Utilizamos as melhores práticas para promover uma comunicação consistente e eficaz, gerando conexões reais com seu público e conquistando resultados de longo prazo.
+            Transforme sua presença digital com estratégias de Social Mídia personalizadas. Nossa equipe cria conteúdos
+            impactantes e desenvolve planos de engajamento para aumentar a visibilidade da sua marca nas redes sociais.
+            Utilizamos as melhores práticas para promover uma comunicação consistente e eficaz, gerando conexões reais
+            com seu público e conquistando resultados de longo prazo.
           </div>
           <div class="sub-title">Social Mídia</div>
         </div>
@@ -67,7 +82,10 @@
         <!-- <div class="divider"></div> -->
         <div class="contentText">
           <div class="description">
-            Oferecemos soluções de atendimento ao cliente com Inteligência Artificial (IA), que proporcionam uma experiência de suporte ágil, eficiente e personalizada. Nossos sistemas de IA podem responder dúvidas frequentes, processar solicitações e até mesmo realizar vendas, tudo de forma automatizada, 24/7, liberando sua equipe para focar em questões mais complexas e estratégicas
+            Oferecemos soluções de atendimento ao cliente com Inteligência Artificial (IA), que proporcionam uma
+            experiência de suporte ágil, eficiente e personalizada. Nossos sistemas de IA podem responder dúvidas
+            frequentes, processar solicitações e até mesmo realizar vendas, tudo de forma automatizada, 24/7, liberando
+            sua equipe para focar em questões mais complexas e estratégicas
           </div>
           <div class="sub-title">Atendente com Inteligência Artificial </div>
         </div>
@@ -79,7 +97,10 @@
         <!-- <div class="divider"></div> -->
         <div class="contentText">
           <div class="description">
-            Ajudamos você a lançar e monetizar cursos online com soluções completas de co-produção. Desde a criação do conteúdo até a plataforma de vendas, garantimos que seu curso seja atrativo e fácil de acessar para seus alunos. Trabalhamos juntos para maximizar o alcance e as vendas, utilizando estratégias de marketing digital para promover seu curso e atrair um público engajado e qualificado.
+            Ajudamos você a lançar e monetizar cursos online com soluções completas de co-produção. Desde a criação do
+            conteúdo até a plataforma de vendas, garantimos que seu curso seja atrativo e fácil de acessar para seus
+            alunos. Trabalhamos juntos para maximizar o alcance e as vendas, utilizando estratégias de marketing digital
+            para promover seu curso e atrair um público engajado e qualificado.
           </div>
           <div class="sub-title">Co-Produção para Venda de Cursos Online</div>
         </div>
@@ -90,10 +111,55 @@
 </template>
 
 <script>
+
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Services",
-};
+  mounted() {
+    this.animateOnScroll();
+  },
+  methods: {
+    animateOnScroll() {
+      // Animação dos serviços
+      const services = document.querySelectorAll('.service, .service2');
+
+      services.forEach((service, index) => {
+        gsap.from(service, {
+          opacity: 0,
+          y: 100,
+          duration: 1.5,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: service,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            scrub: true,
+            delay: index * 0.2, // Delay entre as animações dos serviços
+          }
+        });
+      });
+
+      // Animação do título
+      gsap.from('.title', {
+        opacity: 0,
+        y: -100,
+        duration: 1.5,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: '.title',
+          start: 'top 80%',
+          end: 'bottom 20%',
+          scrub: true,
+        }
+      });
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -117,6 +183,7 @@ export default {
   display: flex;
   padding-left: 20px;
 }
+
 .service2 {
   display: flex;
   flex-direction: row-reverse;
@@ -140,7 +207,7 @@ export default {
 }
 
 .sub-title {
-  color: #faefd1;
+  color: #ff9400;
   font-size: 40px;
   font-family: "Montserrat";
   font-weight: 400;
@@ -149,13 +216,13 @@ export default {
 }
 
 .description {
-  color: white;
+  color: rgba(250, 239, 209, 1);
   font-size: 31px;
   font-family: "League Spartan";
   font-weight: 300;
   line-height: 31px;
   letter-spacing: 0.62px;
-  margin: 20px ;
+  margin: 20px;
 }
 
 .divider {
@@ -168,6 +235,8 @@ export default {
   max-width: 703px;
   border-top-left-radius: 200px;
   border-bottom-left-radius: 200px;
+  height: 400px; 
+  object-fit: cover; 
 }
 
 .service-image2 {
@@ -175,6 +244,8 @@ export default {
   max-width: 703px;
   border-top-right-radius: 200px;
   border-bottom-right-radius: 200px;
+  height: 400px; 
+  object-fit: cover; 
 }
 
 @media (max-width: 768px) {
