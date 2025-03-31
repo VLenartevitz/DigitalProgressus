@@ -1,5 +1,6 @@
 <template>
   <Header> </Header>
+  <Banner></Banner>
   <InfiniteCarrousel> </InfiniteCarrousel>
   <About></About>
   <Services> </Services> 
@@ -16,13 +17,14 @@ import Services from './layout/Services.vue';
 import About from './layout/About.vue';
 import Clients from './layout/Clients.vue';
 import Contact from './layout/Contact.vue';
+import Banner from './layout/Banner.vue';
 
 
 export default {
   name: 'App',
   components: {
     // eslint-disable-next-line vue/no-unused-components
-    Header, Footer, InfiniteCarrousel, Services, About, Clients, Contact
+    Header, Footer, InfiniteCarrousel, Services, About, Clients, Contact, Banner
   }
 }
 </script>
