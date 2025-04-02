@@ -54,7 +54,6 @@ export default {
   font-weight: bold;
   margin: 0;
   padding: 0;
-  animation: fadeIn 1s ease-in-out;
   font-family: 'Arial', sans-serif;
   text-transform: uppercase;
   letter-spacing: 5px;

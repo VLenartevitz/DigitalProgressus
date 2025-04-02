@@ -5,7 +5,7 @@
       <div class="secondContent">
         <!-- Logo -->
         <div class="logo-container">
-          <img :src="require('@/assets/images/Logo.png')" alt="Logo da empresa" class="logo" />
+          <img :src="require('@/assets/images/LOGO P - PNG.png')" alt="Logo da empresa" class="logo" />
         </div>
 
         <!-- Navegação -->
@@ -99,7 +99,7 @@ export default {
 }
 
 .logo {
-  width: 120px;
+  width: 200px;
   height: auto;
 }
 

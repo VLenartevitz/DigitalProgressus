@@ -14,7 +14,7 @@
           </div>
           <div class="sub-title">Criação de Sites</div>
         </div>
-        <img class="service-image" :src="require('@/assets/images/desenvolvimento.png')" alt="Criação de Sites" />
+        <img class="service-image" :src="require('@/assets/images/online-web-design.jpg')" alt="Criação de Sites" />
       </div>
     </div>
     <div class="service-section">
@@ -29,7 +29,7 @@
           </div>
           <div class="sub-title">Edição e Produção de Vídeo</div>
         </div>
-        <img class="service-image2" :src="require('@/assets/images/video.png')" alt="Criação de Sites" />
+        <img class="service-image2" :src="require('@/assets/images/influencer-showcasing-sound-mixer-device-viewers.jpg')" alt="Criação de Sites" />
       </div>
     </div>
     <div class="service-section">
@@ -44,7 +44,7 @@
           </div>
           <div class="sub-title">DESIGN</div>
         </div>
-        <img class="service-image" :src="require('@/assets/images/design.png')" alt="Criação de Sites" />
+        <img class="service-image" :src="require('@/assets/images/design.jpg')" alt="Criação de Sites" />
       </div>
     </div>
     <div class="service-section">
@@ -59,7 +59,7 @@
           </div>
           <div class="sub-title">Gestão de Anúncios Online</div>
         </div>
-        <img class="service-image2" :src="require('@/assets/images/gestao.png')" alt="Criação de Sites" />
+        <img class="service-image2" :src="require('@/assets/images/anuncios.png')" alt="Criação de Sites" />
       </div>
     </div>
     <div class="service-section">
@@ -74,7 +74,7 @@
           </div>
           <div class="sub-title">Social Mídia</div>
         </div>
-        <img class="service-image" :src="require('@/assets/images/ia.jpg')" alt="Criação de Sites" />
+        <img class="service-image" :src="require('@/assets/images/midia.jpg')" alt="Criação de Sites" />
       </div>
     </div>
     <div class="service-section">
@@ -104,7 +104,7 @@
           </div>
           <div class="sub-title">Co-Produção para Venda de Cursos Online</div>
         </div>
-        <img class="service-image" :src="require('@/assets/images/Logo.png')" alt="Criação de Sites" />
+        <img class="service-image" :src="require('@/assets/images/desenvolvimento.png')" alt="Criação de Sites" />
       </div>
     </div>
   </div>
