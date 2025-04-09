@@ -35,7 +35,6 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 export default {
     // eslint-disable-next-line vue/multi-word-component-names
     name: 'Clients',
@@ -44,7 +43,6 @@ export default {
     },
     methods: {
         animateOnScroll() {
-            // Animação do texto introdutório quando entrar no viewport
             gsap.from('.intro-text', {
                 opacity: 0,
                 y: 50,
@@ -52,13 +50,12 @@ export default {
                 ease: 'power4.out',
                 scrollTrigger: {
                     trigger: '.intro-wrapper',
-                    start: 'top 80%', // Começa quando 80% do elemento estiver visível
+                    start: 'top 80%',
                     end: 'bottom 20%',
-                    scrub: true, // Para que a animação siga o scroll
+                    scrub: true,
                 }
             });
 
-            // Animação da imagem principal
             gsap.from('.main-image', {
                 opacity: 0,
                 scale: 0.8,
@@ -72,7 +69,6 @@ export default {
                 }
             });
 
-            // Animação da seção de clientes
             gsap.from('.client-section', {
                 opacity: 0,
                 x: -100,
@@ -86,7 +82,6 @@ export default {
                 }
             });
 
-            // Animação das imagens na galeria
             gsap.from('.image-small, .image-medium', {
                 opacity: 0,
                 y: 50,
@@ -103,66 +98,171 @@ export default {
         }
     }
 }
-
 </script>
 
 <style scoped>
 .container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     color: #FAEFD1;
-    font-family: 'Gentium Book Plus', serif;
+    padding: 20px 0;
 }
 
 .intro-wrapper {
-    width: 90%;
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
 .intro-text {
-    font-size: 50px;
+    font-size: 28px;
+    line-height: 1.4;
 }
 
 .client-section {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-    text-align: left;
+    gap: 30px;
+    text-align: center;
+    width: 100%;
 }
 
 .main-image {
-    width: 50%;
-    max-width: 539px;
+    width: 100%;
+    max-width: 500px;
     height: auto;
+    border-radius: 15px;
+}
+
+.text-content {
+    width: 100%;
 }
 
 .title {
-    font-size: 70px;
-    line-height: 70px;
-    margin-bottom: 10px;
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 15px;
 }
 
 .description {
-    font-size: 50px;
+    font-size: 20px;
+    line-height: 1.5;
 }
 
 .image-gallery {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 40px;
+    width: 100%;
 }
 
 .image-small,
 .image-medium {
     width: 100%;
-    max-width: 300px;
+    max-width: 350px;
     height: auto;
+    border-radius: 10px;
+}
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) {
+    .intro-text {
+        font-size: 32px;
+    }
+    
+    .client-section {
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+    }
+    
+    .main-image {
+        width: 50%;
+    }
+    
+    .text-content {
+        width: 45%;
+    }
+    
+    .title {
+        font-size: 42px;
+    }
+    
+    .description {
+        font-size: 24px;
+    }
+    
+    .image-gallery {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .image-small {
+        width: calc(50% - 10px);
+        max-width: 300px;
+    }
+    
+    .image-medium {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+/* Desktop (1025px+) */
+@media (min-width: 1025px) {
+    .container {
+        width: 80%;
+    }
+    
+    .intro-text {
+        font-size: 36px;
+    }
+    
+    .title {
+        font-size: 48px;
+    }
+    
+    .description {
+        font-size: 28px;
+    }
+    
+    .image-gallery {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    
+    .image-small {
+        width: 30%;
+    }
+    
+    .image-medium {
+        width: 40%;
+    }
+}
+
+/* Pequenos dispositivos móveis (até 480px) */
+@media (max-width: 480px) {
+    .intro-text {
+        font-size: 22px;
+    }
+    
+    .title {
+        font-size: 30px;
+    }
+    
+    .description {
+        font-size: 18px;
+    }
+    
+    .image-gallery {
+        gap: 15px;
+    }
 }
 </style>

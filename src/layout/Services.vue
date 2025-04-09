@@ -178,7 +178,6 @@ export default {
   text-align: center;
 }
 
-
 .service {
   display: flex;
   padding-left: 20px;
@@ -188,13 +187,11 @@ export default {
   display: flex;
   flex-direction: row-reverse;
   padding-right: 20px;
-
 }
 
 .title {
   color: #faefd1;
   font-size: 80px;
-  font-family: "Holtwood One SC";
   font-weight: 400;
   padding-left: 100px;
 }
@@ -209,7 +206,6 @@ export default {
 .sub-title {
   color: #ff9400;
   font-size: 40px;
-  font-family: "Montserrat";
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.80px;
@@ -218,16 +214,10 @@ export default {
 .description {
   color: rgba(250, 239, 209, 1);
   font-size: 31px;
-  font-family: "League Spartan";
   font-weight: 300;
   line-height: 31px;
   letter-spacing: 0.62px;
   margin: 20px;
-}
-
-.divider {
-  width: 65px;
-  border: 4px solid #faefd1;
 }
 
 .service-image {
@@ -248,21 +238,77 @@ export default {
   object-fit: cover; 
 }
 
-@media (max-width: 768px) {
-  .title {
-    font-size: 60px;
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .service, .service2 {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
   }
+  
+  .service-image, .service-image2 {
+    border-radius: 200px;
+    max-width: 90%;
+    margin-top: 20px;
+  }
+  
+  .contentText {
+    order: 2;
+  }
+}
 
+/* Mobile (até 767px) */
+@media (max-width: 767px) {
+  .title {
+    font-size: 50px;
+    padding-left: 20px;
+    text-align: center;
+  }
+  
+  .services-container {
+    gap: 60px;
+    padding-bottom: 100px;
+  }
+  
   .sub-title {
     font-size: 30px;
+    line-height: 35px;
   }
-
+  
   .description {
-    font-size: 24px;
+    font-size: 20px;
+    line-height: 25px;
+    margin: 15px 0;
   }
+  
+  .service-image, .service-image2 {
+    height: 300px;
+    border-radius: 100px;
+  }
+  
+  .service-section {
+    padding: 0 15px;
+  }
+}
 
-  .service-image {
-    max-width: 90%;
+/* Pequenos dispositivos móveis */
+@media (max-width: 480px) {
+  .title {
+    font-size: 40px;
+  padding-left: 10px;
+  }
+  
+  .sub-title {
+    font-size: 25px;
+  }
+  
+  .description {
+    font-size: 18px;
+  }
+  
+  .service-image, .service-image2 {
+    height: 250px;
+    border-radius: 80px;
   }
 }
 </style>

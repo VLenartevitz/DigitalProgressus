@@ -18,6 +18,7 @@ import About from './layout/About.vue';
 import Clients from './layout/Clients.vue';
 import Contact from './layout/Contact.vue';
 import Banner from './layout/Banner.vue';
+import './assets/fonts/fonts.css';
 
 
 export default {
@@ -34,6 +35,7 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'FuturaDisplay', 'Montserrat';
 }
 
 html, body {

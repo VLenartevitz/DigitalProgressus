@@ -3,7 +3,7 @@
     <div class="content-wrapper">
       <div class="text-container">
         <h1 class="title">PRÓGRESSUS</h1>
-        <h2 class="subtitle">A TRANSFORMAÇÂO COMEÇA AGORA</h2>
+        <h2 class="subtitle">A TRANSFORMAÇÃO COMEÇA AGORA</h2>
       </div>
       <img src="../assets/images/LOGO P - PNG.png" class="logo" />
     </div>
@@ -22,10 +22,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 1000px;
+  height: 100vh;
   background: #000000;
   color: white;
   animation: fadeIn 1.5s ease-in-out;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .content-wrapper {
@@ -54,7 +56,7 @@ export default {
   font-weight: bold;
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  /* font-family: 'Arial', sans-serif; */
   text-transform: uppercase;
   letter-spacing: 5px;
   line-height: 1;
@@ -64,7 +66,7 @@ export default {
   font-size: 36px;
   margin-top: 20px;
   animation: fadeIn 1.5s ease-in-out;
-  font-family: 'Arial', sans-serif;
+  /* font-family: 'Arial', sans-serif; */
   font-weight: normal;
   letter-spacing: 3px;
 }
@@ -91,7 +93,8 @@ export default {
   }
 }
 
-/* Responsividade para telas menores */
+/* Responsividade */
+
 @media (max-width: 1200px) {
   .content-wrapper {
     flex-direction: column;
@@ -113,6 +116,52 @@ export default {
   
   .subtitle {
     font-size: 28px;
+  }
+}
+
+@media (max-width: 992px) {
+  .logo {
+    width: 500px;
+  }
+  
+  .title {
+    font-size: 60px;
+  }
+  
+  .subtitle {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 400px;
+  }
+  
+  .title {
+    font-size: 50px;
+  }
+  
+  .subtitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .content-wrapper {
+    gap: 20px;
+  }
+  
+  .logo {
+    width: 300px;
+  }
+  
+  .title {
+    font-size: 10px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
   }
 }
 </style>

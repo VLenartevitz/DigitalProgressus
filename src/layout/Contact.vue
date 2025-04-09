@@ -44,31 +44,27 @@ export default {
 <style scoped>
 .contact-container {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   min-height: 80vh;
   color: rgba(250, 239, 209, 1);
   padding: 20px 100px;
   align-items: center;
+  justify-content: center;
 }
 
 .posi-title {
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
-.left-side {
+.left-side, .right-side {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  flex: 1;
-}
-
-.right-side {
-  flex: 1;
-  display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .contact-title {
@@ -119,7 +115,8 @@ export default {
 
 .info-detail {
   font-size: 18px;
-  color: rgba(250, 239, 209, 1);}
+  color: rgba(250, 239, 209, 1);
+}
 
 .contact-form {
   width: 100%;
@@ -159,5 +156,39 @@ export default {
 .contact-form button:hover {
   background-color: rgba(250, 239, 209, 1);
   color: #ff9400;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left-side, .right-side {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-title {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .info-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .icon-box {
+    margin-bottom: 10px;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
 }
 </style>

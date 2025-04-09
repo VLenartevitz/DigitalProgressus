@@ -26,10 +26,11 @@
             <i class="fab fa-whatsapp icon"></i>
             <p>WhatsApp</p>
           </a>
-          <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn" class="icon-group">
-            <i class="fab fa-linkedin icon"></i>
-            <p>LinkedIn</p>
+          <a href="https://www.tiktok.com/@progressus.4" target="_blank" aria-label="Tiktok" class="icon-group">
+            <i class="fab fa-tiktok icon"></i>
+            <p>Tiktok</p>
           </a>
+
         </div>
       </div>
 
@@ -110,7 +111,7 @@ export default {
   align-items: center;
   gap: 20px;
   /* Maior espaçamento */
-  font-family: Archivo, sans-serif;
+  /* font-family: Archivo, sans-serif; */
   font-weight: 700;
   font-size: 18px;
   color: #000;
@@ -143,7 +144,7 @@ export default {
   gap: 10px;
   color: #000;
   /* Letras pretas */
-  font-family: Archivo, sans-serif;
+  /* font-family: Archivo, sans-serif; */
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
@@ -164,7 +165,7 @@ export default {
 .credits {
   width: 100%;
   text-align: center;
-  font-family: Archivo, sans-serif;
+  /* font-family: Archivo, sans-serif; */
   font-size: 14px;
   font-weight: 400;
   padding-top: 30px;

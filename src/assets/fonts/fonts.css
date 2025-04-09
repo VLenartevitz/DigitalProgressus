@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'FuturaDisplay';
+    src: url('@/assets/fonts/futura-display.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
