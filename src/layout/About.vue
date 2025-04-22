@@ -5,19 +5,19 @@
       </p>
       <div class="team">
           <div class="member">
-              <img class="image" src="../assets/images/clube.png" />
-              <p class="name">Daniel</p>
+            <img class="image" src="../assets/images/filipe.png" />
+            <p class="name">Daniel</p>
           </div>
           <div class="member">
-              <img class="image" src="../assets/images/clube.png" />
+              <img class="image" src="../assets/images/samuel.jpg" />
               <p class="name">Samuel</p>
           </div>
           <div class="member">
-              <img class="image" src="../assets/images/clube.png" />
+              <img class="image" src="../assets/images/filipe.png" />
               <p class="name">Filipe</p>
           </div>
           <div class="member">
-              <img class="image" src="../assets/images/clube.png" />
+              <img class="image" src="../assets/images/gab.png" />
               <p class="name">Gabriel</p>
           </div>
       </div>

@@ -3,7 +3,7 @@
     <div class="left-side">
       <div class="posi-title">
         <h1 class="contact-title">Contate-nos</h1>
-        <p class="subtitle">Alguma pergunta?<span>Nós mande um e-mail</span></p>
+        <p class="subtitle">Alguma pergunta?<span> Nós mande um e-mail</span></p>
       </div>
       <div class="contact-info">
         <div class="info-item">
