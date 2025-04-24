@@ -11,35 +11,32 @@
       </p>
     </div>
 
+    <!-- Seção de Depoimentos -->
     <div class="client-section">
       <img
         class="main-image"
-        :src="clients[currentClientIndex].image"
-        :alt="`Imagem do cliente ${clients[currentClientIndex].title}`"
+        :src="testimonials[currentTestimonialIndex].image"
+        :alt="`Depoimento ${testimonials[currentTestimonialIndex].title}`"
       />
 
       <div class="text-content">
-        <h2 class="title">{{ clients[currentClientIndex].title }}</h2>
-        <p class="description">{{ clients[currentClientIndex].description }}</p>
+        <h2 class="title">{{ testimonials[currentTestimonialIndex].title }}</h2>
+        <p class="description">{{ testimonials[currentTestimonialIndex].description }}</p>
       </div>
     </div>
 
-    <div class="image-gallery">
-      <img
-        class="image-small"
-        src="../assets/images/Logo Catelão.jpg"
-        alt="Imagem pequena esquerda"
-      />
-      <img
-        class="image-small"
-        src="../assets/images/Logo One Hep.jpg"
-        alt="Imagem pequena direita"
-      />
-      <img
-        class="image-small"
-        src="../assets/images/clube.png"
-        alt="Imagem média"
-      />
+    <!-- Carrossel de Logos -->
+    <div class="logo-carousel">
+      <h3 class="carousel-title">Alguns de nossos clientes</h3>
+      <div class="carousel-track">
+        <div class="carousel-slide" v-for="(logo, index) in [...logos, ...logos]" :key="index">
+          <img 
+            class="logo-image" 
+            :src="logo.image" 
+            :alt="`Logo ${logo.name}`"
+          />
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -47,11 +44,17 @@
 <script>
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+
+// Imagens para depoimentos (fotos reais)
 import logoMav from "@/assets/images/Logo MAV.jpg";
 import logoCatelao from "@/assets/images/Logo Catelão.jpg";
 import logoOneHep from "@/assets/images/Logo One Hep.jpg";
 import kauamImage from "@/assets/images/Kauam.jpg";
 import valterImage from "@/assets/images/Valter.jpg";
+import ClubeImage from "@/assets/images/clube.png";
+import OssImage from "@/assets/images/oss.png";
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,7 +63,8 @@ export default {
   name: "Clients",
   data() {
     return {
-      clients: [
+      // Array para depoimentos (com fotos dos clientes)
+      testimonials: [
         {
           title: "MAV",
           description:
@@ -92,13 +96,26 @@ export default {
           image: valterImage,
         },
       ],
-      currentClientIndex: 0,
-      intervalId: null,
+      
+      logos: [
+        { name: "MAV Company", image: logoMav },
+        { name: "Catelão Distribuidora", image: logoCatelao },
+        { name: "One Hep", image: logoOneHep },
+        { name: "Kauam", image: kauamImage },
+        { name: "Valter", image: valterImage },
+        { name: "Fibradoss", image: OssImage },
+        { name: "Costela", image: ClubeImage },
+
+      ],
+      
+      currentTestimonialIndex: 0,
+      intervalId: null
     };
   },
   mounted() {
     this.animateOnScroll();
-    this.startClientRotation();
+    this.startTestimonialRotation();
+    this.setupLogoCarousel();
   },
   beforeUnmount() {
     clearInterval(this.intervalId);
@@ -144,27 +161,43 @@ export default {
         },
       });
 
-      gsap.from(".image-small, .image-medium", {
+      gsap.from(".logo-carousel", {
         opacity: 0,
         y: 50,
-        stagger: 0.2,
         duration: 1,
         ease: "power4.out",
         scrollTrigger: {
-          trigger: ".image-gallery",
+          trigger: ".logo-carousel",
           start: "top 80%",
           end: "bottom 20%",
           scrub: true,
         },
       });
     },
-    startClientRotation() {
+    
+    startTestimonialRotation() {
       this.intervalId = setInterval(() => {
-        this.currentClientIndex =
-          (this.currentClientIndex + 1) % this.clients.length;
+        this.currentTestimonialIndex = 
+          (this.currentTestimonialIndex + 1) % this.testimonials.length;
       }, 6000);
     },
-  },
+    
+    setupLogoCarousel() {
+      this.$nextTick(() => {
+        const track = document.querySelector('.carousel-track');
+        if (!track) return;
+        
+        const width = track.scrollWidth / 2;
+        
+        gsap.to(track, {
+          x: -width,
+          duration: 40,
+          ease: "none",
+          repeat: -1
+        });
+      });
+    }
+  }
 };
 </script>
 
@@ -197,6 +230,7 @@ export default {
   gap: 30px;
   text-align: center;
   width: 100%;
+  margin: 40px 0;
 }
 
 .main-image {
@@ -204,6 +238,8 @@ export default {
   max-width: 500px;
   height: auto;
   border-radius: 15px;
+  object-fit: cover;
+  aspect-ratio: 1/1;
 }
 
 .text-content {
@@ -221,24 +257,41 @@ export default {
   line-height: 1.5;
 }
 
-.image-gallery {
+/* Estilos do Carrossel de Logos */
+.logo-carousel {
+  width: 100%;
+  overflow: hidden;
+  margin: 80px 0;
+  padding: 40px 0; /* Aumentei o padding */
+  position: relative;
+  background: rgba(255, 255, 255, 0.05); /* Fundo sutil para destacar */
+  border-radius: 15px;
+}
+
+.carousel-track {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  margin-top: 40px;
-  width: 100%;
+  gap: 60px; /* Aumentei o espaçamento */
+  width: max-content;
+  will-change: transform;
+  align-items: center; /* Centraliza verticalmente */
+  padding: 20px 0;
 }
 
-.image-small,
-.image-medium {
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  border-radius: 10px;
+.logo-image {
+  height: 120px; /* Aumentei significativamente o tamanho */
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  opacity: 0.9; /* Removi o grayscale e ajustei a opacidade */
+  transition: all 0.3s ease;
 }
 
-/* Tablet (768px - 1024px) */
+.logo-image:hover {
+  opacity: 1;
+  transform: scale(1.15); /* Efeito hover mais pronunciado */
+}
+
+/* Responsividade */
 @media (min-width: 768px) {
   .intro-text {
     font-size: 32px;
@@ -266,24 +319,12 @@ export default {
     font-size: 24px;
   }
 
-  .image-gallery {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .image-small {
-    width: calc(50% - 10px);
-    max-width: 300px;
-  }
-
-  .image-medium {
-    width: 100%;
-    max-width: 500px;
+  .logo-image {
+    height: 150px;
+    max-width: 250px;
   }
 }
 
-/* Desktop (1025px+) */
 @media (min-width: 1025px) {
   .container {
     width: 80%;
@@ -301,21 +342,20 @@ export default {
     font-size: 28px;
   }
 
-  .image-gallery {
-    flex-direction: row;
-    flex-wrap: nowrap;
+  .carousel-title {
+    font-size: 32px;
   }
 
-  .image-small {
-    width: 30%;
+  .logo-image {
+    height: 180px;
+    max-width: 300px;
   }
-
-  .image-medium {
-    width: 40%;
+  
+  .carousel-track {
+    gap: 80px;
   }
 }
 
-/* Pequenos dispositivos móveis (até 480px) */
 @media (max-width: 480px) {
   .intro-text {
     font-size: 22px;
@@ -329,8 +369,13 @@ export default {
     font-size: 18px;
   }
 
-  .image-gallery {
-    gap: 15px;
+  .logo-image {
+    height: 80px;
+    max-width: 150px;
+  }
+  
+  .carousel-track {
+    gap: 30px;
   }
 }
 </style>

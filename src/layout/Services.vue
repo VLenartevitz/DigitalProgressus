@@ -1,314 +1,310 @@
 <template>
-  <div class="services-container">
-    <div class="title">Serviços</div>
+  <div class="services-page">
+    <h1 class="page-title">Nossos Serviços</h1>
 
-    <div class="service-section">
-      <div class="service">
-        <!-- <div class="divider"></div> -->
-        <div class="contentText">
-          <div class="description">
-            Desenvolvemos sites responsivos, rápidos e com design intuitivo que oferecem uma excelente experiência ao
-            usuário. Desde a criação do layout até a programação personalizada, garantimos que seu site seja não apenas
-            visualmente atraente, mas também funcional e otimizado para SEO. Com nossa expertise, seu negócio estará
-            online com uma plataforma que reflete sua identidade e potencializa sua presença digital.
-          </div>
-          <div class="sub-title">Criação de Sites</div>
+    <div class="services-container">
+      <div v-for="(service, index) in services" :key="index" class="service-card"
+        :class="{ 'reverse-layout': index % 2 !== 0 }">
+        <div class="service-content">
+          <h3 class="service-title">{{ service.title }}</h3>
+          <p class="service-description">{{ service.description }}</p>
+          <button class="service-button" @click="scrollToContact">Saiba mais</button>
         </div>
-        <img class="service-image" :src="require('@/assets/images/online-web-design.jpg')" alt="Criação de Sites" />
-      </div>
-    </div>
-    <div class="service-section">
-      <div class="service2">
-        <!-- <div class="divider"></div> -->
-        <div class="contentText">
-          <div class="description">
-            A produção de vídeos é uma das formas mais eficazes de conectar-se com seu público. Oferecemos serviços
-            completos de edição e produção de vídeos, desde roteirização até a pós-produção, criando conteúdos que
-            transmitem sua mensagem de forma clara e envolvente. Seja para vídeos institucionais, campanhas
-            publicitárias ou conteúdos para redes sociais, nossa equipe transforma sua visão em realidade.
-          </div>
-          <div class="sub-title">Edição e Produção de Vídeo</div>
+        <div class="service-image-container">
+          <img class="service-image" :src="getImageUrl(service.image)" :alt="service.title" />
+          <div class="image-overlay"></div>
         </div>
-        <img class="service-image2" :src="require('@/assets/images/influencer-showcasing-sound-mixer-device-viewers.jpg')" alt="Criação de Sites" />
-      </div>
-    </div>
-    <div class="service-section">
-      <div class="service">
-        <!-- <div class="divider"></div> -->
-        <div class="contentText">
-          <div class="description">
-            A identidade visual é um dos pilares para o sucesso de qualquer marca. Nossa equipe de design cria materiais
-            gráficos que traduzem a essência da sua marca de maneira única e impactante. Desenvolvemos logotipos,
-            material promocional, banners, infográficos e muito mais, com foco em estética e funcionalidade, garantindo
-            que sua comunicação visual se destaque e seja reconhecid
-          </div>
-          <div class="sub-title">DESIGN</div>
-        </div>
-        <img class="service-image" :src="require('@/assets/images/design.jpg')" alt="Criação de Sites" />
-      </div>
-    </div>
-    <div class="service-section">
-      <div class="service2">
-        <!-- <div class="divider"></div> -->
-        <div class="contentText">
-          <div class="description">
-            Aumente a conversão e maximize o retorno sobre o investimento (ROI) com nossa gestão estratégica de anúncios
-            online. Criamos campanhas de publicidade paga no Google Ads, Facebook, Instagram e outras plataformas,
-            otimizando cada anúncio para alcançar o público certo. Monitoramos os resultados em tempo real e ajustamos
-            as campanhas conforme necessário para garantir o melhor desempenho.
-          </div>
-          <div class="sub-title">Gestão de Anúncios Online</div>
-        </div>
-        <img class="service-image2" :src="require('@/assets/images/anuncios.png')" alt="Criação de Sites" />
-      </div>
-    </div>
-    <div class="service-section">
-      <div class="service">
-        <!-- <div class="divider"></div> -->
-        <div class="contentText">
-          <div class="description">
-            Transforme sua presença digital com estratégias de Social Mídia personalizadas. Nossa equipe cria conteúdos
-            impactantes e desenvolve planos de engajamento para aumentar a visibilidade da sua marca nas redes sociais.
-            Utilizamos as melhores práticas para promover uma comunicação consistente e eficaz, gerando conexões reais
-            com seu público e conquistando resultados de longo prazo.
-          </div>
-          <div class="sub-title">Social Mídia</div>
-        </div>
-        <img class="service-image" :src="require('@/assets/images/midia.jpg')" alt="Criação de Sites" />
-      </div>
-    </div>
-    <div class="service-section">
-      <div class="service2">
-        <!-- <div class="divider"></div> -->
-        <div class="contentText">
-          <div class="description">
-            Oferecemos soluções de atendimento ao cliente com Inteligência Artificial (IA), que proporcionam uma
-            experiência de suporte ágil, eficiente e personalizada. Nossos sistemas de IA podem responder dúvidas
-            frequentes, processar solicitações e até mesmo realizar vendas, tudo de forma automatizada, 24/7, liberando
-            sua equipe para focar em questões mais complexas e estratégicas
-          </div>
-          <div class="sub-title">Atendente com Inteligência Artificial </div>
-        </div>
-        <img class="service-image2" :src="require('@/assets/images/ia.jpg')" alt="Criação de Sites" />
-      </div>
-    </div>
-    <div class="service-section">
-      <div class="service">
-        <!-- <div class="divider"></div> -->
-        <div class="contentText">
-          <div class="description">
-            Ajudamos você a lançar e monetizar cursos online com soluções completas de co-produção. Desde a criação do
-            conteúdo até a plataforma de vendas, garantimos que seu curso seja atrativo e fácil de acessar para seus
-            alunos. Trabalhamos juntos para maximizar o alcance e as vendas, utilizando estratégias de marketing digital
-            para promover seu curso e atrair um público engajado e qualificado.
-          </div>
-          <div class="sub-title">Co-Produção para Venda de Cursos Online</div>
-        </div>
-        <img class="service-image" :src="require('@/assets/images/desenvolvimento.png')" alt="Criação de Sites" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+// Importe todas as imagens necessárias
+import onlineWebDesign from '@/assets/images/online-web-design.jpg';
+import videoProduction from '@/assets/images/influencer-showcasing-sound-mixer-device-viewers.jpg';
+import design from '@/assets/images/design.jpg';
+import ads from '@/assets/images/anuncios.png';
+import socialMedia from '@/assets/images/midia.jpg';
+import aiAssistant from '@/assets/images/ia.jpg';
+import onlineCourses from '@/assets/images/desenvolvimento.png';
 
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: "Services",
-  mounted() {
-    this.animateOnScroll();
+  name: "ServicesPage",
+  data() {
+    return {
+      services: [
+        {
+          title: "Criação de Sites",
+          description: "Desenvolvemos sites responsivos, rápidos e com design intuitivo que oferecem uma excelente experiência ao usuário. Desde a criação do layout até a programação personalizada, garantimos que seu site seja não apenas visualmente atraente, mas também funcional e otimizado para SEO.",
+          image: onlineWebDesign
+        },
+        {
+          title: "Edição e Produção de Vídeo",
+          description: "A produção de vídeos é uma das formas mais eficazes de conectar-se com seu público. Oferecemos serviços completos de edição e produção de vídeos, desde roteirização até a pós-produção, criando conteúdos que transmitem sua mensagem de forma clara e envolvente.",
+          image: videoProduction
+        },
+        {
+          title: "Design Gráfico",
+          description: "A identidade visual é um dos pilares para o sucesso de qualquer marca. Nossa equipe de design cria materiais gráficos que traduzem a essência da sua marca de maneira única e impactante, garantindo que sua comunicação visual se destaque e seja reconhecida.",
+          image: design
+        },
+        {
+          title: "Gestão de Anúncios Online",
+          description: "Aumente a conversão e maximize o retorno sobre o investimento com nossa gestão estratégica de anúncios online. Criamos campanhas otimizadas para alcançar o público certo e monitoramos os resultados em tempo real.",
+          image: ads
+        },
+        {
+          title: "Social Media",
+          description: "Transforme sua presença digital com estratégias de Social Media personalizadas. Criamos conteúdos impactantes e desenvolvemos planos de engajamento para aumentar a visibilidade da sua marca nas redes sociais.",
+          image: socialMedia
+        },
+        {
+          title: "Atendente com IA",
+          description: "Oferecemos soluções de atendimento ao cliente com Inteligência Artificial que proporcionam uma experiência de suporte ágil, eficiente e personalizada 24/7, liberando sua equipe para focar em questões estratégicas.",
+          image: aiAssistant
+        },
+        {
+          title: "Cursos Online",
+          description: "Ajudamos você a lançar e monetizar cursos online com soluções completas de co-produção. Desde a criação do conteúdo até a plataforma de vendas, garantimos que seu curso seja atrativo e fácil de acessar.",
+          image: onlineCourses
+        }
+      ]
+    }
   },
   methods: {
-    animateOnScroll() {
-      // Animação dos serviços
-      const services = document.querySelectorAll('.service, .service2');
+    methods: {
+      scrollToContact() {
+        const contactSection = document.getElementById('contact');
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    },
+    getImageUrl(image) {
+      return image;
+    },
+    setupAnimations() {
+      gsap.registerPlugin(ScrollTrigger);
 
-      services.forEach((service, index) => {
-        gsap.from(service, {
+      // Animação do título
+      gsap.from('.page-title', {
+        opacity: 0,
+        y: -50,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.page-title',
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      });
+
+      // Animação dos cards de serviço
+      gsap.utils.toArray('.service-card').forEach((card, index) => {
+        gsap.from(card, {
           opacity: 0,
-          y: 100,
-          duration: 1.5,
-          ease: 'power4.out',
+          y: 80,
+          duration: 0.8,
+          ease: 'back.out(1.2)',
+          delay: index * 0.15,
           scrollTrigger: {
-            trigger: service,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            scrub: true,
-            delay: index * 0.2, // Delay entre as animações dos serviços
+            trigger: card,
+            start: 'top 75%',
+            toggleActions: 'play none none none'
           }
         });
       });
-
-      // Animação do título
-      gsap.from('.title', {
-        opacity: 0,
-        y: -100,
-        duration: 1.5,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger: '.title',
-          start: 'top 80%',
-          end: 'bottom 20%',
-          scrub: true,
-        }
-      });
     }
+  },
+  mounted() {
+    this.setupAnimations();
   }
 }
 </script>
 
 <style scoped>
+.services-page {
+  padding: 80px 20px;
+  background: #000;
+  color: #faefd1;
+  min-height: 100vh;
+}
+
+.page-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  text-align: center;
+  margin-bottom: 80px;
+  background: linear-gradient(45deg, #faefd1, #ff9400);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
 .services-container {
   display: flex;
   flex-direction: column;
   gap: 100px;
-  padding-bottom: 200px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.service-section {
+.service-card {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 100%;
-  text-align: center;
+  gap: 40px;
+  position: relative;
 }
 
-.service {
-  display: flex;
-  padding-left: 20px;
-}
-
-.service2 {
-  display: flex;
+.reverse-layout {
   flex-direction: row-reverse;
-  padding-right: 20px;
 }
 
-.title {
-  color: #faefd1;
-  font-size: 80px;
-  font-weight: 400;
-  padding-left: 100px;
+.service-content {
+  flex: 1;
+  padding: 40px;
+  z-index: 2;
 }
 
-.contentText {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-evenly;
-  width: 100%;
-}
-
-.sub-title {
+.service-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: #ff9400;
-  font-size: 40px;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 0.80px;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
-.description {
-  color: rgba(250, 239, 209, 1);
-  font-size: 31px;
-  font-weight: 300;
-  line-height: 31px;
-  letter-spacing: 0.62px;
-  margin: 20px;
+.service-description {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.6;
+  color: rgba(250, 239, 209, 0.9);
+  margin-bottom: 30px;
+}
+
+.service-button {
+  background: linear-gradient(45deg, #ff9400, #ff6b00);
+  color: #000;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 148, 0, 0.3);
+}
+
+.service-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 148, 0, 0.4);
+}
+
+.service-image-container {
+  flex: 1;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  min-height: 400px;
 }
 
 .service-image {
   width: 100%;
-  max-width: 703px;
-  border-top-left-radius: 200px;
-  border-bottom-left-radius: 200px;
-  height: 400px; 
-  object-fit: cover; 
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.service-image2 {
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 703px;
-  border-top-right-radius: 200px;
-  border-bottom-right-radius: 200px;
-  height: 400px; 
-  object-fit: cover; 
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
 }
 
-/* Tablet (768px - 1024px) */
+.service-card:hover .service-image {
+  transform: scale(1.05);
+}
+
+/* Responsividade */
 @media (max-width: 1024px) {
-  .service, .service2 {
+  .services-container {
+    gap: 70px;
+  }
+
+  .page-title {
+    margin-bottom: 60px;
+  }
+
+  .service-card {
     flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
+    gap: 30px;
   }
-  
-  .service-image, .service-image2 {
-    border-radius: 200px;
-    max-width: 90%;
-    margin-top: 20px;
+
+  .reverse-layout {
+    flex-direction: column;
   }
-  
-  .contentText {
+
+  .service-content {
+    padding: 30px;
     order: 2;
   }
+
+  .service-image-container {
+    width: 100%;
+    min-height: 300px;
+  }
 }
 
-/* Mobile (até 767px) */
-@media (max-width: 767px) {
-  .title {
-    font-size: 50px;
-    padding-left: 20px;
-    text-align: center;
+@media (max-width: 768px) {
+  .services-page {
+    padding: 60px 15px;
   }
-  
+
   .services-container {
-    gap: 60px;
-    padding-bottom: 100px;
+    gap: 50px;
   }
-  
-  .sub-title {
-    font-size: 30px;
-    line-height: 35px;
+
+  .page-title {
+    margin-bottom: 40px;
   }
-  
-  .description {
-    font-size: 20px;
-    line-height: 25px;
-    margin: 15px 0;
+
+  .service-content {
+    padding: 20px;
   }
-  
-  .service-image, .service-image2 {
-    height: 300px;
-    border-radius: 100px;
+
+  .service-title {
+    margin-bottom: 15px;
   }
-  
-  .service-section {
-    padding: 0 15px;
+
+  .service-description {
+    margin-bottom: 20px;
+  }
+
+  .service-button {
+    padding: 10px 25px;
   }
 }
 
-/* Pequenos dispositivos móveis */
 @media (max-width: 480px) {
-  .title {
-    font-size: 40px;
-  padding-left: 10px;
+  .services-page {
+    padding: 40px 10px;
   }
-  
-  .sub-title {
-    font-size: 25px;
+
+  .page-title {
+    margin-bottom: 30px;
   }
-  
-  .description {
-    font-size: 18px;
+
+  .service-card {
+    gap: 20px;
   }
-  
-  .service-image, .service-image2 {
-    height: 250px;
-    border-radius: 80px;
+
+  .service-image-container {
+    min-height: 250px;
   }
 }
 </style>

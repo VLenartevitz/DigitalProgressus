@@ -1,31 +1,31 @@
 <template>
-  <div class="container">
+  <div class="about-container">
+    <div class="hero-section">
       <p class="descriptionAbout">
-          Somos uma <br/>Equipe formada<br/>por 4 irmãos ...
+        Somos uma <br/>Equipe formada<br/>por 4 irmãos
       </p>
+    </div>
+
+    <div class="team-section">
       <div class="team">
-          <div class="member">
-            <img class="image" src="../assets/images/filipe.png" />
-            <p class="name">Daniel</p>
+        <div class="member" v-for="(member, index) in teamMembers" :key="index">
+          <div class="image-wrapper">
+            <img class="member-image" :src="member.image" :alt="`Foto de ${member.name}`" />
+            <div class="overlay"></div>
           </div>
-          <div class="member">
-              <img class="image" src="../assets/images/samuel.jpg" />
-              <p class="name">Samuel</p>
-          </div>
-          <div class="member">
-              <img class="image" src="../assets/images/filipe.png" />
-              <p class="name">Filipe</p>
-          </div>
-          <div class="member">
-              <img class="image" src="../assets/images/gab.png" />
-              <p class="name">Gabriel</p>
-          </div>
+          <p class="name">{{ member.name }}</p>
+          <p class="role">{{ member.role }}</p>
+        </div>
       </div>
-      <div class="tamanhoTexto">
+    </div>
+
+    <div class="footer-section">
       <p class="footer-text">
-          Desde 2020, atuamos com dedicação e comprometimento no mercado digital, ajudando empresas de diferentes segmentos a alcançar seu público-alvo e maximizar seu potencial de crescimento com nossos serviços.
+        Desde 2020, atuamos com dedicação e comprometimento no mercado digital, 
+        ajudando empresas de diferentes segmentos a alcançar seu público-alvo e 
+        maximizar seu potencial de crescimento com nossos serviços.
       </p>
-  </div>
+    </div>
   </div>
 </template>
 
@@ -33,161 +33,220 @@
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
+// Importe as imagens corretas para cada membro
+import danielImage from '@/assets/images/filipe.png';
+import samuelImage from '@/assets/images/samuel.jpg';
+import filipeImage from '@/assets/images/filipe.png';
+import gabrielImage from '@/assets/images/gab.png';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-// eslint-disable-next-line vue/multi-word-component-names
-name: "About",
-mounted() {
-  this.animateOnScroll();
-},
-methods: {
-  animateOnScroll() {
-    gsap.from('.descriptionAbout', {
-      opacity: 0,
-      y: -100,
-      duration: 1.5,
-      ease: 'power4.out',
-      scrollTrigger: {
-        trigger: '.descriptionAbout',
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: true,
-      }
-    });
-
-    const members = document.querySelectorAll('.member');
-
-    members.forEach((member, index) => {
-      gsap.from(member, {
+  name: "AboutPage",
+  data() {
+    return {
+      teamMembers: [
+        { name: "Daniel", image: danielImage, role: "CEO & Founder" },
+        { name: "Samuel", image: samuelImage, role: "Diretor Criativo" },
+        { name: "Filipe", image: filipeImage, role: "Diretor de Tecnologia" },
+        { name: "Gabriel", image: gabrielImage, role: "Diretor de Operações" }
+      ]
+    };
+  },
+  mounted() {
+    this.animateOnScroll();
+  },
+  methods: {
+    animateOnScroll() {
+      // Animação do título
+      gsap.from('.descriptionAbout', {
         opacity: 0,
-        y: 100,
-        duration: 1.5,
-        ease: 'power4.out',
+        y: -50,
+        duration: 1.2,
+        ease: 'power3.out',
         scrollTrigger: {
-          trigger: member,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          scrub: true,
-          delay: index * 0.2,
+          trigger: '.hero-section',
+          start: 'top 75%',
+          toggleActions: 'play none none none'
         }
       });
-    });
 
-    gsap.from('.footer-text', {
-      opacity: 0,
-      y: 100,
-      duration: 1.5,
-      ease: 'power4.out',
-      scrollTrigger: {
-        trigger: '.footer-text',
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: true,
-      }
-    });
+      // Animação dos membros da equipe
+      gsap.utils.toArray('.member').forEach((member, index) => {
+        gsap.from(member, {
+          opacity: 0,
+          y: 50,
+          duration: 0.8,
+          ease: 'back.out(1.2)',
+          delay: index * 0.15,
+          scrollTrigger: {
+            trigger: '.team-section',
+            start: 'top 70%',
+            toggleActions: 'play none none none'
+          }
+        });
+      });
+
+      // Animação do texto do rodapé
+      gsap.from('.footer-text', {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.footer-section',
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      });
+    }
   }
-}
 }
 </script>
 
-<style>
-.container {
+<style scoped>
+.about-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   background: #000;
-  color: #fff;
-  padding: 20px;
-  box-sizing: border-box;
+  color: #faefd1;
+  overflow: hidden;
+}
+
+.hero-section {
+  width: 100%;
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
 
 .descriptionAbout {
-  text-align: center;
-  font-size: 60px;
-  /* font-family: Montserrat; */
+  font-size: clamp(2.5rem, 8vw, 5rem);
   font-style: italic;
   font-weight: 900;
-  color: rgba(250, 239, 209, 1);
-  padding: 20px;
+  line-height: 1.2;
+  margin: 0;
+  background: linear-gradient(45deg, #faefd1, #c8b48c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.team-section {
+  width: 100%;
+  padding: 60px 20px;
+  background: #000;
 }
 
 .team {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  width: 100%;
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .member {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.image {
+.image-wrapper {
+  position: relative;
   width: 100%;
-  max-width: 305px;
-  height: auto;
+  max-width: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(250, 239, 209, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover {
+  transform: translateY(-10px);
+}
+
+.member-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.image-wrapper:hover .member-image {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 40%);
 }
 
 .name {
-  font-size: 24px;
-  /* font-family: Holtwood One SC; */
-  color: rgba(250, 239, 209, 1);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 10px 0 5px;
+  color: #faefd1;
+}
+
+.role {
+  font-size: 1.1rem;
+  color: rgba(250, 239, 209, 0.8);
+  margin: 0;
+}
+
+.footer-section {
+  width: 100%;
+  padding: 80px 20px;
+  background: #111;
+  text-align: center;
 }
 
 .footer-text {
-  text-align: center;
-  font-size: 24px;
-  /* font-family: Montserrat; */
-  font-weight: 400;
-  padding: 20px;
-  color: rgba(250, 239, 209, 1);
-  width: 90%;
-}
-
-.tamanhoTexto {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  color: rgba(250, 239, 209, 0.9);
 }
 
 /* Responsividade */
-@media (max-width: 1200px) {
-  .descriptionAbout {
-      font-size: 50px;
-  }
-}
-
-@media (max-width: 992px) {
-  .descriptionAbout {
-      font-size: 40px;
-  }
-  .name {
-      font-size: 20px;
-  }
-}
-
 @media (max-width: 768px) {
-  .descriptionAbout {
-      font-size: 30px;
+  .hero-section {
+    padding: 60px 20px;
   }
-  .footer-text {
-      font-size: 20px;
+  
+  .team {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .member-image {
+    height: 300px;
   }
 }
 
-@media (max-width: 576px) {
-  .descriptionAbout {
-      font-size: 24px;
+@media (max-width: 480px) {
+  .team {
+    grid-template-columns: 1fr;
   }
-  .footer-text {
-      font-size: 18px;
+  
+  .hero-section {
+    padding: 40px 20px;
   }
-  .name {
-      font-size: 18px;
+  
+  .footer-section {
+    padding: 60px 20px;
   }
 }
 </style>

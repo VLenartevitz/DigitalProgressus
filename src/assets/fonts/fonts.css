@@ -1,8 +1,16 @@
 @font-face {
-    font-family: 'FuturaDisplay';
-    src: url('@/assets/fonts/futura-display.otf') format('otf');
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-family: 'FuturaDisplay';
+  src: url('@/assets/fonts/futura/Futura Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.font-futura {
+  font-family: 'FuturaDisplay', sans-serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
