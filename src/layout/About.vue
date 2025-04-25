@@ -1,4 +1,5 @@
-<template>
+<template >
+<section id="sobre-nos">
   <div class="about-container">
     <div class="hero-section">
       <p class="descriptionAbout">
@@ -14,7 +15,6 @@
             <div class="overlay"></div>
           </div>
           <p class="name">{{ member.name }}</p>
-          <p class="role">{{ member.role }}</p>
         </div>
       </div>
     </div>
@@ -27,6 +27,7 @@
       </p>
     </div>
   </div>
+</section>
 </template>
 
 <script>
@@ -34,7 +35,7 @@ import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 // Importe as imagens corretas para cada membro
-import danielImage from '@/assets/images/filipe.png';
+import danielImage from '@/assets/images/dani.png';
 import samuelImage from '@/assets/images/samuel.jpg';
 import filipeImage from '@/assets/images/filipe.png';
 import gabrielImage from '@/assets/images/gab.png';
@@ -46,10 +47,10 @@ export default {
   data() {
     return {
       teamMembers: [
-        { name: "Daniel", image: danielImage, role: "CEO & Founder" },
-        { name: "Samuel", image: samuelImage, role: "Diretor Criativo" },
-        { name: "Filipe", image: filipeImage, role: "Diretor de Tecnologia" },
-        { name: "Gabriel", image: gabrielImage, role: "Diretor de Operações" }
+        { name: "Daniel", image: danielImage,  },
+        { name: "Samuel", image: samuelImage,  },
+        { name: "Filipe", image: filipeImage,  },
+        { name: "Gabriel", image: gabrielImage,  }
       ]
     };
   },

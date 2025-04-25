@@ -1,4 +1,5 @@
 <template>
+  <section id="servicos">
   <div class="services-page">
     <h1 class="page-title">Nossos Serviços</h1>
 
@@ -17,6 +18,7 @@
       </div>
     </div>
   </div>
+</section>
 </template>
 
 <script>
@@ -76,48 +78,49 @@ export default {
     }
   },
   methods: {
-    methods: {
-      scrollToContact() {
-        const contactSection = document.getElementById('contact');
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    },
-    getImageUrl(image) {
-      return image;
-    },
-    setupAnimations() {
-      gsap.registerPlugin(ScrollTrigger);
+  scrollToContact() {
+    const contactSection = document.getElementById('contato');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  },
+  getImageUrl(image) {
+    return image;
+  },
+  setupAnimations() {
+    gsap.registerPlugin(ScrollTrigger);
 
-      // Animação do título
-      gsap.from('.page-title', {
+    // Animação do título
+    gsap.from('.page-title', {
+      opacity: 0,
+      y: -50,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.page-title',
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      }
+    });
+
+    // Animação dos cards de serviço
+    gsap.utils.toArray('.service-card').forEach((card, index) => {
+      gsap.from(card, {
         opacity: 0,
-        y: -50,
-        duration: 1,
-        ease: 'power3.out',
+        y: 80,
+        duration: 0.8,
+        ease: 'back.out(1.2)',
+        delay: index * 0.15,
         scrollTrigger: {
-          trigger: '.page-title',
-          start: 'top 80%',
+          trigger: card,
+          start: 'top 75%',
           toggleActions: 'play none none none'
         }
       });
+    });
+  }
+},
 
-      // Animação dos cards de serviço
-      gsap.utils.toArray('.service-card').forEach((card, index) => {
-        gsap.from(card, {
-          opacity: 0,
-          y: 80,
-          duration: 0.8,
-          ease: 'back.out(1.2)',
-          delay: index * 0.15,
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 75%',
-            toggleActions: 'play none none none'
-          }
-        });
-      });
-    }
-  },
   mounted() {
     this.setupAnimations();
   }
