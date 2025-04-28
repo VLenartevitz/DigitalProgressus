@@ -1,4 +1,5 @@
 <template>
+  <section id="home">
   <div class="banner">
     <div class="content-wrapper">
       <div class="text-container">
@@ -8,6 +9,7 @@
       <img src="../assets/images/LOGO P - PNG.png" class="logo" />
     </div>
   </div>
+</section>
 </template>
 
 <script>

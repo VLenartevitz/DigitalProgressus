@@ -10,19 +10,19 @@
 
         <!-- Navegação -->
         <div class="navigation">
-          <p @click="navigate('inicio')">Início</p>
-          <p @click="navigate('sobre')">Sobre Nós</p>
-          <p @click="navigate('servicos')">Serviços</p>
-          <p @click="navigate('contato')">Contato</p>
+          <a href="#home" class="nav-link">Início</a>
+          <a href="#sobre-nos" class="nav-link">Sobre Nós</a>
+          <a href="#servicos" class="nav-link">Serviços</a>
+          <a href="#contato" class="nav-link">Contato</a>
         </div>
 
         <!-- Redes sociais -->
         <div class="social-media">
-          <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="icon-group">
+          <a href="https://www.instagram.com/progressus.co/" target="_blank" aria-label="Instagram" class="icon-group">
             <i class="fab fa-instagram icon"></i>
             <p>Instagram</p>
           </a>
-          <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp" class="icon-group">
+          <a href="https://wa.me/5513996864685?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Pr%C3%B3gressus." target="_blank" aria-label="WhatsApp" class="icon-group">
             <i class="fab fa-whatsapp icon"></i>
             <p>WhatsApp</p>
           </a>
@@ -30,7 +30,6 @@
             <i class="fab fa-tiktok icon"></i>
             <p>Tiktok</p>
           </a>
-
         </div>
       </div>
 
@@ -105,6 +104,18 @@ export default {
 }
 
 /* Navegação */
+.nav-link {
+  text-decoration: none; /* Tira o sublinhado */
+  color: #000; /* Deixa a cor preta */
+  font-weight: 700;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #333; /* Cor no hover */
+  transform: translateY(-2px);
+}
 .navigation {
   display: flex;
   flex-direction: column;

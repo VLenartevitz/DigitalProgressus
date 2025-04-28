@@ -2,22 +2,23 @@
   <header class="header">
     <nav>
       <ul class="menu">
-        <li class="menu-item"> 
-          <a href="#home" class="nav-link">Home</a>
+        <li>
+          <a href="#home" class="menu-item nav-link">Home</a>
         </li>
-        <li class="menu-item">
-          <a href="#sobre-nos" class="nav-link">Sobre Nós</a>
+        <li>
+          <a href="#sobre-nos" class="menu-item nav-link">Sobre Nós</a>
         </li>
-        <li class="menu-item">
-          <a href="#servicos" class="nav-link">Serviços</a>
+        <li>
+          <a href="#servicos" class="menu-item nav-link">Serviços</a>
         </li>
-        <li class="menu-item">
-          <a href="#contato" class="nav-link">Contato</a>
+        <li>
+          <a href="#contato" class="menu-item nav-link">Contato</a>
         </li>
       </ul>
     </nav>
   </header>
 </template>
+
 
 <script>
 export default {
@@ -52,25 +53,32 @@ export default {
 
 /* Itens do menu */
 .menu-item {
-  flex: 1 1 auto;
+  /* Tudo igual como já está */
   display: flex;
   justify-content: center;
   align-items: center;
   border: 2px solid rgba(250, 239, 209, 1);
   border-radius: 30px;
-  padding: 12px;
+  padding: 20px 30px; /* Aumenta a área clicável */
   box-sizing: border-box;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
   position: relative;
   overflow: hidden;
   min-width: 120px;
+  text-decoration: none; /* Já evita sublinhado */
+  color: rgba(250, 239, 209, 1);
+  font-size: 24px;
+  text-align: center;
 }
 
 .menu-item:hover {
   border-color: #ff9400;
   box-shadow: 0 0 15px rgba(255, 148, 0, 0.6);
   transform: translateY(-3px);
+  color: #ff9400;
+  text-shadow: 0 0 8px rgba(255, 148, 0, 0.4);
 }
+
 
 /* Links de navegação */
 .nav-link {
